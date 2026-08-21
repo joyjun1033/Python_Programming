@@ -34,6 +34,24 @@ import sys
 print(sys.float_info.min)
 print(sys.float_info.max)
 
+print(-sys.float_info.min)
+print(-sys.float_info.max)
+
 a = 1.7e308
 b = 1.8e308
 print(a, b)
+
+# 실수의 오차
+print(0.1 + 0.2)
+print(0.1 + 0.2 == 0.3) #false
+print(f"{0.1:.20f}") #정확한 0.1이 나오지 않음 because 부동소숫점
+print(f"{0.2:.20f}")
+#sys.float_info.epsilon
+
+#형변환
+print(float(10))
+print(int(3.14))
+#print(int("3.14"))error
+print(int("100"))
+print(float("3.14"))
+print(int(float("3.14")))
