@@ -34,7 +34,7 @@ my_str = ""
 
 start = time.time()
 for i in range(10):
-     my_str += str(i)                                    # 매번 새로운 문자열 객체를 생성
+     my_str += str(i)                       # 매번 새로운 문자열 객체를 생성
 end = time.time()
 
 print(my_str)
@@ -45,7 +45,7 @@ my_list = []
 
 start = time.time()
 for i in range(10):
-    my_list.append(str(i))                                    # 동일 리스트 객체에 append
+    my_list.append(str(i))                   # 동일 리스트 객체에 append
 
 s = "".join(my_list)
 end = time.time()
