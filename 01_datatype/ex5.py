@@ -58,13 +58,13 @@ print(s.replace("Python", "C"))     # 전체 치환
 print(s.replace("Python", "C", 1))  # 1개만 치환
 
 # 판별 문자열 메소드 (isXXX())
-print("123".isdigit())
-print("123".isnumeric())# 숫자이면 True
+print("123".isdigit())              # 전부 숫자면
+print("123".isnumeric())            # 숫자이면 True
 print("abc".isalpha())              # 알파벳이면 True
 print("abc123".isalnum())           # 알파벳 + 숫자이면 True
 print(" \t \n".isspace())           # 공백문자이면 True
 print("hello".islower())            # 소문자이면 True
-print("HELLO".isupper())            # 대문자이면 True
+print("HELLO".isupper())            # 대문자이면 True3
 
 # 구분자를 기준으로 문자열을 분리하는 문자열 메소드
 a = "apple,banana,kiwi"
