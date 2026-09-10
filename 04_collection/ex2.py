@@ -109,58 +109,86 @@ for subject, score in zip(subjects, scores):
 # ===========================================================
 
 # 1 ~ 10의 제곱수 리스트 만들기
+result = []
+for i in range(1, 11):
+    result.append(i**2)
+print(result)
 
-
+result = [i**2 for i in range(1, 11)]       #함수 호출을 안해도 됨
+print(result)
 # 1 ~ 10 중 짝수의 제곱수로 된 리스트 만들기 (필터링 if문 추가)
-
+result = [i**2 for i in range(1, 11) if i % 2 == 0]
+print(result)
 
 # 1 ~ 10 중 짝수면 "짝", 홀수면 "홀" 출력하기
-
+result = ['짝' if i % 2 == 0 else '홀' for i in range(1, 11)]       # if + else인 경우 (삼항연산자) 조건문을 앞으로 보냄
 
 # 각 이름의 길이로 이루어진 리스트 만들기
-
+names = ["pororo", "crong", "poby", "eddy"]
+#[6, 5, 4, 4]
+result = [len(names[i]) for i in range(0, 4)]
+print(result)
 
 # 길이가 5 이상인 이름만 뽑기
-
+names = ["pororo", "crong", "poby", "eddy"]
+result = [name for name in names if len(name) >= 5]
+print(result)
 
 # 중첩 for문도 가능
-
-
+# x = 0 1 2
+# y = 0 1 2
+# x * y로 리스트 만들기
+result = [x * y for x in range(3) for y in range(3)]
+print(result)
 
 # =========================================================
 #  🔥 실습 문제
 # =========================================================
 
 # 1️⃣ 60점 이상인 점수만 뽑기
-# scores = [85, 42, 73, 55, 90, 68, 35, 100]
-
-# result = []
-# print(result)                       # ✅ [85, 73, 90, 68, 100] 출력
+scores = [85, 42, 73, 55, 90, 68, 35, 100]
+result = [score for score in scores if score >= 60]
+print(result)                       # ✅ [85, 73, 90, 68, 100] 출력
 
 
 # 2️⃣ 60점 이상인 경우 "합격", 60점 미만은 "불합격"으로 처리
-# result = []
-# print(result)                       # ✅ ['합격', '불합격', '합격', '불합격', '합격', '합격', '불합격', '합격']
+result = ["합격" if score >= 60 else "불합격" for score in scores]
+print(result)                       # ✅ ['합격', '불합격', '합격', '불합격', '합격', '합격', '불합격', '합격']
 
 
 # 3️⃣ 1 ~ 100 중 3 또는 5의 배수의 합 구하기 (sum() 함수 이용)
-# result = None
-# print(result)                       # ✅ 2418 출력
+result = sum([i for i in range(1, 101) if i % 3 == 0 or i % 5 == 0])
+print(result)                       # ✅ 2418 출력
 
 
 # 4️⃣ n을 포함하고 있는 단어만 뽑기
-# words = ["apple", "banana", "kiwi", "mango"]
+words = ["apple", "banana", "kiwi", "mango"]
 
-# result = []  
-# print(result)                       # ✅ ['banana', 'mango'] 출력
+result = [word for word in words if 'n' in word]  
+print(result)                       # ✅ ['banana', 'mango'] 출력
 
 
 # 5️⃣ 세 학생의 3과목 점수표에서 과목별 평균 구하기
-# scores = [
-#     [90, 80, 70],       # 학생 1
-#     [100, 90, 80],      # 학생 2
-#     [80, 70, 60],       # 학생 3
-# ]
+scores = [
+    [90, 80, 70],       # 학생 1
+    [100, 90, 80],      # 학생 2
+    [80, 70, 60],       # 학생 3
+]
 
-# result = []
-# print(result)                       # ✅ [90.0, 80.0, 70.0]
+result = [sum(scores[i][j] for i in range(3))/3 for j in range(3)]
+print(result)                       # ✅ [90.0, 80.0, 70.0]
+
+std1 = scores[0]
+std2 = scores[1]
+std3 = scores[2]
+
+result = [sum(score) / len(score) for score in zip(std1, std2, std3)]
+print(result)
+result = [round(sum(score) / len(score), 2) for score in zip(*scores)]
+print(result)
+
+# 은행가 반올림
+print(round(0.5)) #내림
+print(round(1.5)) #올림
+print(round(2.5)) #내림
+print(round(3.5)) #올림
