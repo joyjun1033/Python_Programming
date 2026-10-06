@@ -13,7 +13,7 @@ print(len([1,2,3]))                 # 리스트의 길이(요소의 개수)
 
 # 대소문자를 변환해주는 문자열 메소드
 print(a.upper())                    # 대문자로 변환
-print(a.lower)                      # 소문자로 변환
+print(a.lower())                      # 소문자로 변환
 print(a.capitalize())               # 문자열의 첫 글자만 대문자로 변환
 print(a.title())                    # 각 단어의 첫 글자만 대문자로 변환
 

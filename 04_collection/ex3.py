@@ -18,12 +18,12 @@ t = (1, 3.14, True, "python")
 print(t)
 
 a = 1
-b = 1,
-print(type(a), type(b))     #int, tuple
+b = 1,                      # 콤마가 있으면 튜플로 인식
+print(type(a), type(b))     # int, tuple
 
 a = (1)
 b = (1,)
-print(type(a), type(b))     #똑같음
+print(type(a), type(b))     # int, tuple
 
 # ===========================================================
 # 1. 튜플은 immutable하다. (변경 불가능)
@@ -31,7 +31,7 @@ print(type(a), type(b))     #똑같음
 
 # t[0] = 10         # __setitem__없음
 
-t = (1, [2, 3])     # 100번지는 그대로 있으면서 리스트만 추가하는 거니까 괜찮음(?)
+t = (1, [2, 3])     # 튜플 안에 리스트가 들어있으면, 튜플 자체는 변경 불가능하지만, 리스트는 변경 가능함
 t[1].append(4)
 print(t)
 
