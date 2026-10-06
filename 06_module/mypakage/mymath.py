@@ -1,5 +1,5 @@
 # 사용자 정의 모듈
-print("start", __name__)        # 모듈의 이름을 가져오는 내장 변수
+print("start2:", __name__)
 PI = 3.14
 
 def add(a, b):
